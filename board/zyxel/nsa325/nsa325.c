@@ -154,7 +154,7 @@ void reset_phy(void)
     /* switch to LED register page */
     miiphy_write(name, devaddr, MV88E1318_PGADR_REG, MV88E1318_LED_PG);
     /* read out LED polarity register */
-    miiphy_read(name, devaddr, MV88E1318_LED_POL_REG, &reg)
+    miiphy_read(name, devaddr, MV88E1318_LED_POL_REG, &reg);
     /* clear 4, set 5 - LED2 low, tri-state */
     reg &= ~(MV88E1318_LED2_4);
     reg |= (MV88E1318_LED2_5);
