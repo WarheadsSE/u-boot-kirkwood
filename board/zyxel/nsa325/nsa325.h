@@ -55,9 +55,9 @@
 #define HDD2_POWER          (1 << 15)
 #define WATCHDOG_SIGNAL     (1 << 16)
 
-#define NSA320_OE_HIGH		(~(COPY_GREEN_LED | COPY_RED_LED | \
+#define NSA325_OE_HIGH		(~(COPY_GREEN_LED | COPY_RED_LED | \
 				   HDD1_GREEN_LED | HDD1_RED_LED | HDD2_POWER | WATCHDOG_SIGNAL ))
-#define NSA320_VAL_HIGH		(0)
+#define NSA325_VAL_HIGH		(WATCHDOG_SIGNAL)
 
 /* PHY related */
 #define MV88E1318_PGADR_REG		22
