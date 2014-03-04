@@ -152,16 +152,16 @@ void reset_phy(void)
     /* and has an MCU attached to the LED[2] via tristate interrupt */
     reg = 0;
     /* switch to LED register page */
-    miiphy_write(name, devaddr, MV88E1318_PGADR_REG, MV88E1318_LED_PG);
+    miiphy_write(name, devadr, MV88E1318_PGADR_REG, MV88E1318_LED_PG);
     /* read out LED polarity register */
-    miiphy_read(name, devaddr, MV88E1318_LED_POL_REG, &reg);
+    miiphy_read(name, devadr, MV88E1318_LED_POL_REG, &reg);
     /* clear 4, set 5 - LED2 low, tri-state */
     reg &= ~(MV88E1318_LED2_4);
     reg |= (MV88E1318_LED2_5);
     /* write back LED polarity register */
-    miiphy_write(name, devaddr, MV88E1318_LED_POL_REG, reg);
+    miiphy_write(name, devadr, MV88E1318_LED_POL_REG, reg);
     /* jump back to page 0, per the PHY chip documenation. */
-    miiphy_write(name, devaddr, MV88E1318_PGADR_REG, 0);
+    miiphy_write(name, devadr, MV88E1318_PGADR_REG, 0);
 
 	printf("MV88E1318 PHY initialized on %s\n", name);
 }

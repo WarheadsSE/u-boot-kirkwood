@@ -28,8 +28,8 @@
  * MA 02110-1301 USA
  */
 
-#ifndef __NSA320_H
-#define __NSA320_H
+#ifndef __NSA325_H
+#define __NSA325_H
 
 /* low GPIO's */
 #define HDD2_GREEN_LED		(1 << 12)
@@ -42,10 +42,10 @@
 #define PIN_USB_GREEN_LED	15
 #define PIN_USB_POWER		21
 
-#define NSA320_OE_LOW		(~(HDD2_GREEN_LED | HDD2_RED_LED | \
+#define NSA325_OE_LOW		(~(HDD2_GREEN_LED | HDD2_RED_LED | \
 				   USB_GREEN_LED | USB_POWER | \
 				   SYS_GREEN_LED | SYS_ORANGE_LED))
-#define NSA320_VAL_LOW		(SYS_GREEN_LED)
+#define NSA325_VAL_LOW		(SYS_GREEN_LED)
 
 /* high GPIO's */
 #define COPY_GREEN_LED		(1 << 7)
@@ -72,4 +72,4 @@
 
 
 
-#endif /* __NSA320_H */
+#endif /* __NSA325_H */
