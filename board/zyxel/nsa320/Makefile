@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012  Peter Schildmann <linux@schildmann.info>
+# Copyright (C) 2014  Jason Plum <jplum@archlinuxarm.org>
 #
 # Based on sheevaplug/Makefile originally written by
 # Prafulla Wadaskar <prafulla@marvell.com>
@@ -25,4 +25,24 @@
 # MA 02110-1301 USA
 #
 
-obj-y	:= nsa320.o
+include $(TOPDIR)/config.mk
+
+LIB	= $(obj)lib$(BOARD).o
+
+COBJS	:= nsa320.o
+
+SRCS	:= $(SOBJS:.o=.S) $(COBJS:.o=.c)
+OBJS	:= $(addprefix $(obj),$(COBJS))
+SOBJS	:= $(addprefix $(obj),$(SOBJS))
+
+$(LIB):	$(obj).depend $(OBJS) $(SOBJS)
+	$(call cmd_link_o_target, $(OBJS) $(SOBJS))
+
+#########################################################################
+
+# defines $(obj).depend target
+include $(SRCTREE)/rules.mk
+
+sinclude $(obj).depend
+
+#########################################################################
