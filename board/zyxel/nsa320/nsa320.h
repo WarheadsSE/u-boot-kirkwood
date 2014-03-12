@@ -42,7 +42,7 @@
 #define NSA320_OE_LOW		(~(HDD2_GREEN_LED | HDD2_RED_LED | \
 				   USB_GREEN_LED | USB_POWER | \
 				   SYS_GREEN_LED | SYS_ORANGE_LED))
-#define NSA320_VAL_LOW		(SYS_GREEN_LED)
+#define NSA320_VAL_LOW		(SYS_GREEN_LED | USB_POWER)
 
 /* high GPIO's */
 #define COPY_GREEN_LED		(1 << 7)
