@@ -150,16 +150,6 @@ void reset_phy(void)
 }
 #endif /* CONFIG_RESET_PHY_R */
 
-#ifdef CONFIG_USB_POWER
-void usb_power_on(int pwr_on)
-{
-	kw_gpio_set_valid(PIN_USB_GREEN_LED, 1);
-	kw_gpio_set_valid(PIN_USB_POWER, 1);
-	kw_gpio_direction_output(PIN_USB_GREEN_LED, pwr_on);
-	kw_gpio_direction_output(PIN_USB_POWER, pwr_on);
-}
-#endif
-
 #ifdef CONFIG_SHOW_BOOT_PROGRESS
 void show_boot_progress(int val)
 {
